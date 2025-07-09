@@ -320,13 +320,6 @@ class WhisperState: NSObject, ObservableObject {
                 modelContext.insert(newTranscription)
                 try? modelContext.save()
             }
-            
-            if case .trialExpired = licenseViewModel.licenseState {
-                text = """
-                    Your trial has expired. Upgrade to VoiceInk Pro at tryvoiceink.com/buy
-                    \n\(text)
-                    """
-            }
 
             text += " "
 
